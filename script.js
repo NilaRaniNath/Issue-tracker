@@ -1,6 +1,6 @@
 
-document.getElementById("sign-in").addEventListener("click",function(){
-    // event.preventDefault();
+document.getElementById("sign-in").addEventListener("click",function(event){
+    event.preventDefault();
         const nameInput=document.getElementById("input-name");
     const userName=nameInput.value;
     // console.log(userName);
