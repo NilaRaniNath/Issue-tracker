@@ -16,15 +16,12 @@ window.onload = function () {
 
 async function loadAllIssues() {
     showSpinner();
-    try {
+
         const response = await fetch(homePage);
         const data = await response.json();
         allIssues = Array.isArray(data) ? data : (data.issues || data.data || []);
         displayIssues(allIssues);
-    } catch (error) {
-        showError("Failed to load issues.");
-    }
-};
+    };
 
 
 
@@ -62,14 +59,14 @@ function displayIssues(issues) {
     }
 
     grid.innerHTML = "";
-    issues.forEach((issue, index) => {
-        grid.appendChild(createCard(issue, index));
+    issues.forEach((issue) => {
+        grid.appendChild(createCard(issue));
     });
 }
 
 
 
-function createCard(issue, index) {
+function createCard(issue) {
     const status = (issue.status || "open").toLowerCase();
     const priority = (issue.priority || "LOW").toUpperCase();
     
@@ -81,7 +78,7 @@ function createCard(issue, index) {
 
     const card = document.createElement("div");
     card.className = `card bg-base-100 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer fade-up ${status === 'open' ? 'card-open' : 'card-closed'}`;
-    card.style.animationDelay = `${Math.min(index * 40, 400)}ms`;
+    // card.style.animationDelay = `${Math.min(index * 40, 400)}ms`;
 
     
     card.innerHTML = `
@@ -98,9 +95,9 @@ function createCard(issue, index) {
     `;
 
     
-    card.querySelector(".issue-title").textContent = issue.title || "Untitled";
-    card.querySelector(".issue-desc").textContent = issue.description || issue.body || "";
-    card.querySelector(".author-name").textContent = issue.author || "unknown";
+    card.querySelector(".issue-title").textContent = issue.title;
+    card.querySelector(".issue-desc").textContent = issue.description;
+    card.querySelector(".author-name").textContent = issue.author;
 
     card.onclick = () => openModal(issue);
     return card;
@@ -146,10 +143,10 @@ function openModal(issue) {
     `;
 
    
-    document.getElementById("m-assignee").textContent = issue.assignee || issue.author || "unknown";
-    document.getElementById("m-title").textContent = issue.title || "Untitled";
-    document.getElementById("m-desc").textContent = issue.description || issue.body || "No description provided.";
-    document.getElementById("m-assignee-val").textContent = issue.assignee || issue.author || "unknown";
+    document.getElementById("m-assignee").textContent = issue.assignee || issue.author;
+    document.getElementById("m-title").textContent = issue.title;
+    document.getElementById("m-desc").textContent = issue.description;
+    document.getElementById("m-assignee-val").textContent = issue.assignee || issue.author;
 
     document.getElementById("issueModal").showModal();
 }
@@ -163,7 +160,7 @@ function showSpinner() {
 }
 
 function showError(msg) {
-    document.getElementById("issueGrid").innerHTML = `<div class="col-span-full text-center py-24">⚠️ ${msg}</div>`;
+    document.getElementById("issueGrid").innerHTML = `<div class="col-span-full text-center py-24"> ${msg}</div>`;
 }
 
 function formatDate(str) {
