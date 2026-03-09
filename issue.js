@@ -6,11 +6,6 @@ window.onload = function () {
     loadAllIssues();
 
 };
-//     document.getElementById("searchInput").addEventListener("keydown", function (e) {
-//         if (e.key === "Enter") runSearch();
-//     });
-// };
-
 
 
 
@@ -29,7 +24,7 @@ async function loadAllIssues() {
     } catch (error) {
         showError("Failed to load issues.");
     }
-}
+};
 
 
 
@@ -54,18 +49,7 @@ function getFilteredIssues() {
 }
 
 
-// function runSearch() {
-//     const query = document.getElementById("searchInput").value.trim().toLowerCase();
-//     if (!query) {
-//         displayIssues(getFilteredIssues());
-//         return;
-//     }
-//     const filtered = allIssues.filter(issue => 
-//         issue.title.toLowerCase().includes(query) || 
-//         (issue.description && issue.description.toLowerCase().includes(query))
-//     );
-//     displayIssues(filtered);
-// }
+
 
 
 function displayIssues(issues) {
