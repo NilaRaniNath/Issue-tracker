@@ -19,3 +19,12 @@ map(): The map() method is used to create a new array by transforming each eleme
 filter(): The filter() method is used to select specific elements from an array based on a condition. It returns a new array that includes only the elements that satisfy the given condition.
 
 forEach():The forEach() method simply executes a function for each element of the array, but it does not return a new array. It is mainly used when we want to perform an action such as displaying values, updating data, or running some operation on each element.
+
+
+4️⃣ What is an arrow function?
+Answer: In JavaScript an arrow function is a shorter and more modern way to write functions. The arrow symbol uses to define a function . Arrow functions make the code more concise and easier to read compared to traditional functions. They are often used for simple operations and id array methods like map(), filter() and forEach().
+
+
+
+5️⃣ What are template literals?
+Answer:Template literals are a modern way to work with strings. This are written using backticks(``) instead of single ('') or double ("") quotes. Template literals allow developers to easily include variables and expressions inside a string using ${}, which is called string interpolation. They also support multi-line strings making the code more readable and convenient.
