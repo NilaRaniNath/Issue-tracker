@@ -1,0 +1,21 @@
+1️⃣ What is the difference between var, let, and const?
+Answer:
+var:- A varriable declared with var can be re-declared ans its value can also be changed. The var keyword is the older way of declaring variables and it has function scope.
+
+let:- let is block-scope,which means it works only inside the block {} where itis declared. A variable declared with let cannot be re-declared in the same scope,but its value can be re-assigned.
+
+const:- The const keyword is also block scoped. A variable declared with const cannot be re-declared or re-assigned after its initial declartion.
+
+
+
+ 2️⃣ What is the spread operator (...)?
+ Answer: The spread operator(...) is used to expand or spread the elements of an array, object into individual elements. It can be used to copy an array ,merge multiple arrays or pass array elements as arguments to a function. This makes the code shorter, cleaner and easier to understand.
+
+
+ 3️⃣ What is the difference between map(), filter(), and forEach()?
+ Answer:
+map(): The map() method is used to create a new array by transforming each element of the original array using a function. It processes every element and returns a new array containing the modified values. The original array remains unchanged. 
+
+filter(): The filter() method is used to select specific elements from an array based on a condition. It returns a new array that includes only the elements that satisfy the given condition.
+
+forEach():The forEach() method simply executes a function for each element of the array, but it does not return a new array. It is mainly used when we want to perform an action such as displaying values, updating data, or running some operation on each element.
